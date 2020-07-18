@@ -23,7 +23,7 @@ const formatedData = jobs => jobs.map(job => ({
   title: job.fields.title,
   company: {
     ...job.fields.source[0],
-    country: job.fields.country[0].name,
+    country: job.fields.country ? job.fields.country[0].name : 'remote',
   },
   date: {
     created: job.fields.date.created,
@@ -58,6 +58,7 @@ class JobsList extends Component {
       const { jobs } = this.state;
       handleSuccess(jobs);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
       handleError(error);
     }
