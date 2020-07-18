@@ -1,10 +1,15 @@
 import React from 'react';
 import '../styles/App.css';
+import Navbar from './Navbar';
+import Presentation from './Presentation';
+import JobList from '../containers/JobsList';
 
 function App() {
   return (
     <div className="App">
-      <h1>Worthy Work</h1>
+      <Navbar />
+      <Presentation />
+      <JobList />
     </div>
   );
 }
