@@ -6,7 +6,11 @@ const initialState = {
     jobs: [],
     error: null,
   },
-  // filter: ''
+  // filter: '',
+  details: {
+    info: {},
+    error: null,
+  },
 };
 
 const store = createStore(

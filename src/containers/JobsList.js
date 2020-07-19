@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import BASE_URL from '../constants/api';
+import { BASE_URL } from '../constants/api';
 import Job from '../components/Job';
 import { fetchJobsSucceeded, fetchJobsFailed } from '../actions';
 
@@ -42,10 +42,10 @@ class JobsList extends Component {
   }
 
   componentDidMount() {
-    this.fetchDrinks();
+    this.fetchJobs();
   }
 
-  async fetchDrinks() {
+  async fetchJobs() {
     const { handleSuccess, handleError } = this.props;
     try {
       this.rawResult = await fetch(BASE_URL);

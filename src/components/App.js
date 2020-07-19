@@ -4,7 +4,7 @@ import '../styles/App.css';
 import Navbar from './Navbar';
 import Presentation from './Presentation';
 import JobsList from '../containers/JobsList';
-import JobPage from './JobPage';
+import JobPage from '../containers/JobPage';
 
 function App() {
   return (
