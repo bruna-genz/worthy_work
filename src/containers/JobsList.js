@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { BASE_URL } from '../constants/api';
 import Job from '../components/Job';
-import { fetchJobsSucceeded, fetchJobsFailed } from '../actions';
+import { fetchJobsSucceeded, fetchJobsFailed, filterCreator } from '../actions';
 import styles from '../styles/JobsList.module.css';
 import Presentation from '../components/Presentation';
 import CountryFilter from '../components/CountryFilter';
 
 const mapStateToProps = state => ({
   data: state.data,
+  filter: state.filter,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -19,6 +20,9 @@ const mapDispatchToProps = dispatch => ({
   handleError: error => {
     dispatch(fetchJobsFailed(error));
   },
+  handleFilterChange: event => {
+    dispatch(filterCreator(event.target.value));
+  },
 });
 
 const formatedData = jobs => jobs.map(job => ({
@@ -26,7 +30,7 @@ const formatedData = jobs => jobs.map(job => ({
   title: job.fields.title,
   company: {
     ...job.fields.source[0],
-    country: job.fields.country ? job.fields.country[0].name : 'remote',
+    country: job.fields.country ? job.fields.country[0].name : 'Remote',
   },
   date: {
     created: job.fields.date.created,
@@ -34,6 +38,12 @@ const formatedData = jobs => jobs.map(job => ({
   },
   url: job.fields.url,
 }));
+
+const mapCountries = jobs => ['All', ...new Set(jobs.map(job => job.company.country))];
+
+const renderHelper = (filter, jobs) => (
+  filter === 'All' ? jobs : jobs.filter(job => job.company.country === filter)
+);
 
 class JobsList extends Component {
   constructor(props) {
@@ -68,17 +78,18 @@ class JobsList extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, handleFilterChange, filter } = this.props;
+    const countryArray = mapCountries(data.jobs);
     return (
       <div>
         <div className={styles.header}>
           <Presentation />
-          <CountryFilter />
+          <CountryFilter countryArray={countryArray} handleFilterChange={handleFilterChange} />
         </div>
         <div className={styles.JobsList}>
           { data.error
             ? <h2>Sorry, something went wrong.</h2>
-            : data.jobs.map(job => (<Job key={job.id} job={job} />))}
+            : renderHelper(filter, data.jobs).map(job => (<Job key={job.id} job={job} />))}
         </div>
       </div>
     );
@@ -88,7 +99,9 @@ class JobsList extends Component {
 JobsList.propTypes = {
   handleSuccess: PropTypes.func.isRequired,
   handleError: PropTypes.func.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
   data: PropTypes.instanceOf(Object).isRequired,
+  filter: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(JobsList);

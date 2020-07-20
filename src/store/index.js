@@ -6,7 +6,7 @@ const initialState = {
     jobs: [],
     error: null,
   },
-  // filter: '',
+  filter: 'All',
   details: {
     info: {},
     error: null,

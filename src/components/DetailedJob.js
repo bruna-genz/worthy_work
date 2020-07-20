@@ -17,7 +17,6 @@ function extractContent(s, space) {
 }
 
 const DetailedJob = ({ job }) => {
-  console.log(typeof job.description);
   return (
     <div className="DetailedJob">
       <h1>{job.title}</h1>
