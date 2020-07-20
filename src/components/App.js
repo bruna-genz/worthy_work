@@ -10,7 +10,6 @@ function App() {
   return (
     <div className={styles.App}>
       <Navbar />
-      <Presentation />
       <Switch>
         <Route path="/" component={JobsList} exact />
         <Route path="/job/:jobId" component={JobPage} />

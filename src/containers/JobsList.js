@@ -5,6 +5,8 @@ import { BASE_URL } from '../constants/api';
 import Job from '../components/Job';
 import { fetchJobsSucceeded, fetchJobsFailed } from '../actions';
 import styles from '../styles/JobsList.module.css';
+import Presentation from '../components/Presentation';
+import CountryFilter from '../components/CountryFilter';
 
 const mapStateToProps = state => ({
   data: state.data,
@@ -68,10 +70,16 @@ class JobsList extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div className={styles.JobsList}>
-        { data.error
-          ? <h2>Sorry, something went wrong.</h2>
-          : data.jobs.map(job => (<Job key={job.id} job={job} />))}
+      <div>
+        <div className={styles.header}>
+          <Presentation />
+          <CountryFilter />
+        </div>
+        <div className={styles.JobsList}>
+          { data.error
+            ? <h2>Sorry, something went wrong.</h2>
+            : data.jobs.map(job => (<Job key={job.id} job={job} />))}
+        </div>
       </div>
     );
   }
