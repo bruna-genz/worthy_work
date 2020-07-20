@@ -1,0 +1,10 @@
+.Presentation {
+  height: 160px;
+  padding: 60px 100px;
+}
+
+.heading {
+  font-family: 'Mukta', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}

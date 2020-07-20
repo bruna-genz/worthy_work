@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { BASE_URL } from '../constants/api';
 import Job from '../components/Job';
 import { fetchJobsSucceeded, fetchJobsFailed } from '../actions';
+import styles from '../styles/JobsList.module.css';
 
 const mapStateToProps = state => ({
   data: state.data,
@@ -67,7 +68,7 @@ class JobsList extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="JobsList">
+      <div className={styles.JobsList}>
         { data.error
           ? <h2>Sorry, something went wrong.</h2>
           : data.jobs.map(job => (<Job key={job.id} job={job} />))}
