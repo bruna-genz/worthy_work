@@ -38,7 +38,7 @@ class JobsList extends Component {
     this.state = {
       jobs: [],
     };
-    this.fetchDrinks = this.fetchDrinks.bind(this);
+    this.fetchJobs = this.fetchJobs.bind(this);
   }
 
   componentDidMount() {
