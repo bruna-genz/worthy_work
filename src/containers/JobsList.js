@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { BASE_URL } from '../constants/api';
 import Job from '../components/Job';
 import { fetchJobsSucceeded, fetchJobsFailed, filterCreator } from '../actions';
-import styles from '../styles/JobsList.module.css';
+import styles from '../assets/styles/JobsList.module.css';
 import Presentation from '../components/Presentation';
 import CountryFilter from '../components/CountryFilter';
 

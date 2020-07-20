@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import styles from '../styles/App.module.css';
+import styles from '../assets/styles/App.module.css';
 import Navbar from './Navbar';
 import JobsList from '../containers/JobsList';
 import JobPage from '../containers/JobPage';

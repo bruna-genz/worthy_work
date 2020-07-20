@@ -1,7 +1,8 @@
 .navbar {
   background-color: white;
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: space-between;
   padding: 15px 20px;
   -webkit-box-shadow: 0px 10px 15px -6px rgb(219, 213, 219);
   -moz-box-shadow: 0px 10px 15px -6px rgb(219, 213, 219);
@@ -13,4 +14,18 @@
   border-right: solid 2px lightgray;
   padding: 5px 25px;
   font-size: 30px;
+}
+
+.credit {
+  display: flex;
+  width: 200px;
+  justify-content: space-evenly;
+}
+
+.rw-logo {
+  width: 60px;
+  height: 30px;
+  background-image: url(/static/media/reliefwelogo.c04a288e.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }

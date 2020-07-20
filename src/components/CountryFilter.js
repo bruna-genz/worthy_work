@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../assets/styles/CountryFilter.module.css';
 
 const CountryFilter = ({ countryArray, handleFilterChange }) => (
-  <select className="filter-selector" name="filter" onChange={handleFilterChange}>
+  <select className={styles['filter-selector']} name="filter" onChange={handleFilterChange}>
     <option value="Country" selected disabled hidden>Country</option>
     { countryArray.map(country => <option key={country} value={country}>{country}</option>)}
   </select>
