@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-const formatedData = jobs => jobs.map(job => ({
+export const formatedData = jobs => jobs.map(job => ({
   id: job.id,
   title: job.fields.title,
   company: {
@@ -39,13 +39,13 @@ const formatedData = jobs => jobs.map(job => ({
   url: job.fields.url,
 }));
 
-const mapCountries = jobs => ['All', ...new Set(jobs.map(job => job.company.country))];
+export const mapCountries = jobs => ['All', ...new Set(jobs.map(job => job.company.country))];
 
-const renderHelper = (filter, jobs) => (
+export const renderHelper = (filter, jobs) => (
   filter === 'All' ? jobs : jobs.filter(job => job.company.country === filter)
 );
 
-class JobsList extends Component {
+export class JobsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
