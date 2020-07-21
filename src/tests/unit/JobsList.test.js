@@ -1,4 +1,4 @@
-import * as JobsList from '../containers/JobsList';
+import * as JobsList from '../../containers/JobsList';
 
 describe('FormatedData function', () => {
   let jobs;

@@ -45,7 +45,7 @@ export const renderHelper = (filter, jobs) => (
   filter === 'All' ? jobs : jobs.filter(job => job.company.country === filter)
 );
 
-export class JobsList extends Component {
+class JobsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
