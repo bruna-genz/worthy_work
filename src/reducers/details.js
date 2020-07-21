@@ -4,10 +4,8 @@ import {
 } from '../constants/actionTypes';
 
 const defaultState = {
-  details: {
-    info: {},
-    error: null,
-  },
+  info: {},
+  error: null,
 };
 
 const detailsReducer = (state = defaultState, action) => {

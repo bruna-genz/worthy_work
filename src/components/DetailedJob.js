@@ -1,46 +1,66 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
-
-function extractContent(s, space) {
-  const span = document.createElement('span');
-  span.innerHTML = s;
-  if (space) {
-    const children = span.querySelectorAll('*');
-    for (let i = 0; i < children.length; i += 1) {
-      if (children[i].textContent) {
-        children[i].textContent += ' ';
-      } else {
-        children[i].innerText += ' ';
-      }
-    }
-  }
-  return [span.textContent || span.innerText].toString().replace(/ +/g, ' ');
-}
+import PropTypes from 'prop-types';
+import Moment from 'react-moment';
+import styles from '../assets/styles/DetailedJob.module.css';
 
 const DetailedJob = ({ job }) => {
+  const dateCreated = job.date ? job.date.created : '2020-07-20T20:04:22+00:00';
+  const dateClosing = job.date ? job.date.closing : '2020-07-20T20:04:22+00:00';
+  const formatedLocation = job.city === 'remote' ? 'Remote' : `${job.city}, ${job.country}`; 
+
   return (
-    <div className="DetailedJob">
-      <h1>{job.title}</h1>
-      <p>{job.company}</p>
+    <div className={styles.DetailedJob}>
+      <div className={styles.header}>
+        <h1>{job.title}</h1>
+        <div className={styles['header-small']}>
+          <p>
+            <span className={styles['sub-title']}>{'Company: '}</span>
+            {job.company}
+          </p>
+          <p className={styles['side-borders']}>
+            <span className={styles['sub-title']}>{'Created: '}</span>
+            <Moment fromNow>{dateCreated}</Moment>
+          </p>
+          <p>
+            <span className={styles['sub-title']}>{'Closing date: '}</span>
+            <Moment format="DD MMM YYYY">{dateClosing}</Moment>
+          </p>
+        </div>
+      </div>
+      <div className={styles.body}>
+        <div className={styles['body-left']}>
+          <p>{job.description}</p>
+          <h2>How to apply</h2>
+          <p>{job.apply}</p>
+        </div>
+        <ul className={styles['body-right']}>
+          <li className={styles['info-item']}>
+            <h4>Location</h4>
+            <p>{formatedLocation}</p>
+          </li>
+          <li className={styles['info-item']}>
+            <h4>Type</h4>
+            <p>{job.type}</p>
+          </li>
+          <li className={styles['info-item']}>
+            <h4>Career category</h4>
+            <p>{job.careerCategory}</p>
+          </li>
+          <li className={styles['info-item']}>
+            <h4>Years of experience</h4>
+            <p>{job.experience}</p>
+          </li>
+          <a className={styles.button} href={job.url} target="_blank">See original</a>
+        </ul>
+      </div>
       <p>{job.city}</p>
-      {extractContent(job.description)}
-      {extractContent(job.apply)}
     </div>
   );
 };
 
-/*
-  company: job.fields.source[0].name,
-  country: job.fields.country ? job.fields.country[0].name : 'remote',
-  city: job.fields.city ? job.fields.city[0].name : 'remote',
-  type: job.fields.type[0].name,
-  careerCategory: job.fields.career_categories[0].name,
-  experience: job.fields.experience[0].name,
-  date: {
-    created: job.fields.date.created,
-    closing: job.fields.date.closing,
-  },
-  description: job.fields.body,
-  apply: job.fields.how_to_apply,
-url: job.fields.url */
+DetailedJob.propTypes = {
+  job: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default DetailedJob;

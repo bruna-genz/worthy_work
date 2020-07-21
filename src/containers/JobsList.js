@@ -79,7 +79,7 @@ class JobsList extends Component {
 
   render() {
     const { data, handleFilterChange, filter } = this.props;
-    const countryArray = mapCountries(data.jobs);
+    const countryArray = data.jobs ? mapCountries(data.jobs) : [];
     return (
       <div>
         <div className={styles.header}>
