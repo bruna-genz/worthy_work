@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
 
-const initialState = {
+export const initialState = {
   data: {
     jobs: [],
     error: null,
