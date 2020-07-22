@@ -84,7 +84,11 @@ class JobsList extends Component {
       <div>
         <div className={styles.header}>
           <Presentation />
-          <CountryFilter countryArray={countryArray} handleFilterChange={handleFilterChange} />
+          <CountryFilter
+            filter={filter}
+            countryArray={countryArray}
+            handleFilterChange={handleFilterChange}
+          />
         </div>
         <div className={styles.JobsList}>
           { data.error

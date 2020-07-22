@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500;600;800&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@500;600;800&display=swap');
 
 * {
   padding: 0;
@@ -7,7 +7,7 @@
 }
 
 html,
-body, 
+body,
 #root,
 .App {
   min-height: 100vh;

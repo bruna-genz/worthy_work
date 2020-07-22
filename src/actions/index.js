@@ -3,7 +3,7 @@ import {
   FETCH_JOBS_FAILED,
   FETCH_DETAILS_SUCCEEDED,
   FETCH_DETAILS_FAILED,
-  CHANGE_FILTER
+  CHANGE_FILTER,
 } from '../constants/actionTypes';
 
 export const fetchJobsSucceeded = books => ({

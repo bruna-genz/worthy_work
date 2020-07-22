@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { render as rtlRender } from '@testing-library/react';
 import { createStore } from 'redux';
@@ -13,6 +14,7 @@ function render(
     ...renderOptions
   } = {},
 ) {
+  // eslint-disable-next-line react/prop-types
   function Wrapper({ children }) {
     return <Provider store={store}>{children}</Provider>;
   }

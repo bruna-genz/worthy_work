@@ -1,6 +1,5 @@
 import React from 'react';
-import { createStore } from 'redux';
-import { render, fireEvent, screen } from '../helpers/test-utils';
+import { render, screen } from '../helpers/test-utils';
 import '@testing-library/jest-dom/extend-expect';
 import JobsList from '../../containers/JobsList';
 
