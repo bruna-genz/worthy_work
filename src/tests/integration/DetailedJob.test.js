@@ -32,9 +32,9 @@ describe('DetailedJob', () => {
     expect(screen.getByText('Fake application instructions')).toBeInTheDocument();
   });
 
-  test('render link to access original url', () => {
+  test('render three links', () => {
     render(<DetailedJob job={job} />);
-    const link = screen.getByRole('link');
-    expect(link.href).toBe('https://www.google.com/');
+    const links = screen.getAllByRole('link');
+    expect(links.length).toBe(3);
   });
 });

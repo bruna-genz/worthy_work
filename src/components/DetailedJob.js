@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter } from 'react-router-dom';
 import styles from '../assets/styles/DetailedJob.module.css';
 
 const DetailedJob = ({ job }) => {
@@ -12,7 +12,9 @@ const DetailedJob = ({ job }) => {
 
   return (
     <div className={styles.DetailedJob}>
-      <Link to="/" className={styles.button}>Back</Link>
+      <BrowserRouter>
+        <Link to="/" className={styles.button}>Back</Link>
+      </BrowserRouter>
       <div className={styles.header}>
         <h1>{job.title}</h1>
         <div className={styles['header-small']}>
@@ -35,7 +37,9 @@ const DetailedJob = ({ job }) => {
           <p>{job.description}</p>
           <h2>How to apply</h2>
           <p>{job.apply}</p>
-          <Link to="/" className={styles.button}>Back</Link>
+          <BrowserRouter>
+            <Link to="/" className={styles.button}>Back</Link>
+          </BrowserRouter>
         </div>
         <ul className={styles['body-right']}>
           <li className={styles['info-item']}>
