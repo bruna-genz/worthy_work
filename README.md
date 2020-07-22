@@ -2,7 +2,7 @@
   Worthy Work
 </h1>
 
-<h4 align="center"><a href="https://booky-redux.herokuapp.com/">Live version >></a></h4>
+<h4 align="center"><a href="https://worthy-work.herokuapp.com/">Live version >></a></h4>
 
 ## Table of Contents
 
