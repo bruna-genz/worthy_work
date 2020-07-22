@@ -74,11 +74,11 @@
   text-decoration: none;
   background-color: rgb(236, 236, 236);
   color: #575252;
-  width: 54%;
+  width: 140px;
   display: flex;
   height: 35px;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
-  margin-top: 20px;
+  margin: 15px 0;
 }

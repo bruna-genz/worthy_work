@@ -2,15 +2,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 import styles from '../assets/styles/DetailedJob.module.css';
 
 const DetailedJob = ({ job }) => {
   const dateCreated = job.date ? job.date.created : '2020-07-20T20:04:22+00:00';
   const dateClosing = job.date ? job.date.closing : '2020-07-20T20:04:22+00:00';
-  const formatedLocation = job.city === 'remote' ? 'Remote' : `${job.city}, ${job.country}`; 
+  const formatedLocation = job.city === 'remote' ? 'Remote' : `${job.city}, ${job.country}`;
 
   return (
     <div className={styles.DetailedJob}>
+      <Link to="/" className={styles.button}>Back</Link>
       <div className={styles.header}>
         <h1>{job.title}</h1>
         <div className={styles['header-small']}>
@@ -33,6 +35,7 @@ const DetailedJob = ({ job }) => {
           <p>{job.description}</p>
           <h2>How to apply</h2>
           <p>{job.apply}</p>
+          <Link to="/" className={styles.button}>Back</Link>
         </div>
         <ul className={styles['body-right']}>
           <li className={styles['info-item']}>
@@ -54,7 +57,6 @@ const DetailedJob = ({ job }) => {
           <a className={styles.button} href={job.url} target="_blank">See original</a>
         </ul>
       </div>
-      <p>{job.city}</p>
     </div>
   );
 };
