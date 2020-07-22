@@ -11,6 +11,7 @@
 - [Built with](https://github.com/bruna-genz/worthy_work/tree/details#built-with)
 - [Installation](https://github.com/bruna-genz/worthy_work/tree/details#installation)
 - [Testing](https://github.com/bruna-genz/worthy_work/tree/details#testing)
+- [Future features](https://github.com/bruna-genz/worthy_work/tree/details#future-features)
 - [Author](https://github.com/bruna-genz/worthy_work/tree/details#author)
 
 ## About
@@ -43,6 +44,10 @@ To install a local version of this app, download or clone the project [here](htt
 
 To run the tests, use the following command:
 - `npm test`
+
+## Future features
+
+- Pagination in the home page;
 
 ## Author
 
