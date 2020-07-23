@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^7.1.2",
+    "dompurify": "^2.0.12",
     "html-to-react": "^1.4.3",
+    "interweave": "^12.5.0",
     "moment": "^2.27.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",

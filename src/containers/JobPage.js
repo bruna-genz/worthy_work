@@ -17,8 +17,8 @@ const formatData = job => ({
     created: job.fields.date.created,
     closing: job.fields.date.closing,
   },
-  description: job.fields.body,
-  apply: job.fields.how_to_apply,
+  description: job.fields['body-html'],
+  apply: job.fields['how_to_apply-html'],
   url: job.fields.url,
 });
 

@@ -71,8 +71,6 @@ class JobsList extends Component {
       const { jobs } = this.state;
       handleSuccess(jobs);
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
       handleError(error);
     }
   }

@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
+import Interweave from 'interweave';
 import { Link, BrowserRouter } from 'react-router-dom';
 import styles from '../assets/styles/DetailedJob.module.css';
 
@@ -34,9 +35,9 @@ const DetailedJob = ({ job }) => {
       </div>
       <div className={styles.body}>
         <div className={styles['body-left']}>
-          <p>{job.description}</p>
+          <Interweave content={job.description} />
           <h2>How to apply</h2>
-          <p>{job.apply}</p>
+          <Interweave content={job.apply} />
           <BrowserRouter>
             <Link to="/" className={styles.button}>Back</Link>
           </BrowserRouter>
