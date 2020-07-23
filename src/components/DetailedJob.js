@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 import Interweave from 'interweave';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from '../assets/styles/DetailedJob.module.css';
 
 const DetailedJob = ({ job }) => {
@@ -13,9 +13,7 @@ const DetailedJob = ({ job }) => {
 
   return (
     <div className={styles.DetailedJob}>
-      <BrowserRouter>
-        <Link to="/" className={styles.button}>Back</Link>
-      </BrowserRouter>
+      <Link to="/" className={styles.button}>Back</Link>
       <div className={styles.header}>
         <h1>{job.title}</h1>
         <div className={styles['header-small']}>
@@ -38,9 +36,7 @@ const DetailedJob = ({ job }) => {
           <Interweave content={job.description} />
           <h2>How to apply</h2>
           <Interweave content={job.apply} />
-          <BrowserRouter>
-            <Link to="/" className={styles.button}>Back</Link>
-          </BrowserRouter>
+          <Link to="/" className={styles.button}>Back</Link>
         </div>
         <ul className={styles['body-right']}>
           <li className={styles['info-item']}>
