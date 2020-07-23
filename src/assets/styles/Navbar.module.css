@@ -1,0 +1,38 @@
+.navbar {
+  background-color: white;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 15px 20px;
+  -webkit-box-shadow: 0 10px 15px -6px rgb(219, 213, 219);
+  -moz-box-shadow: 0 10px 15px -6px rgb(219, 213, 219);
+  box-shadow: 0 10px 15px -6px rgb(219, 213, 219);
+}
+
+.logo {
+  font-family: 'Mukta', sans-serif;
+  border-right: solid 2px lightgray;
+  padding: 5px 25px;
+  font-size: 30px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.credit {
+  display: flex;
+  width: 235px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.rw-logo {
+  width: 100px;
+  height: 50px;
+  background-image: url("https://www.betterteam.com/i/ReliefWeb-1024x512-20200318.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 4px;
+}
