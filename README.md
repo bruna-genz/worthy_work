@@ -6,13 +6,13 @@
 
 ## Table of Contents
 
-- [About](https://github.com/bruna-genz/worthy_work/tree/details#built-with)
-- [Preview](https://github.com/bruna-genz/worthy_work/tree/details#preview)
-- [Built with](https://github.com/bruna-genz/worthy_work/tree/details#built-with)
-- [Installation](https://github.com/bruna-genz/worthy_work/tree/details#installation)
-- [Testing](https://github.com/bruna-genz/worthy_work/tree/details#testing)
-- [Future features](https://github.com/bruna-genz/worthy_work/tree/details#future-features)
-- [Author](https://github.com/bruna-genz/worthy_work/tree/details#author)
+- [About](https://github.com/bruna-genz/worthy_work#built-with)
+- [Preview](https://github.com/bruna-genz/worthy_work#preview)
+- [Built with](https://github.com/bruna-genz/worthy_work#built-with)
+- [Installation](https://github.com/bruna-genz/worthy_work#installation)
+- [Testing](https://github.com/bruna-genz/worthy_work#testing)
+- [Future features](https://github.com/bruna-genz/worthy_work#future-features)
+- [Author](https://github.com/bruna-genz/worthy_work#author)
 
 ## About
 
